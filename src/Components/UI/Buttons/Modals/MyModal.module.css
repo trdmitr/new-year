@@ -1,0 +1,48 @@
+.myModal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: rgba(0,0,0, 0.5);
+    z-index: 101;
+}
+
+.myModalContent {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: large;
+    text-align: center;
+    padding: 25px;
+    /* color: var(--colorText); */
+    color: #dddddd;
+    /* text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5); */
+    border-radius: 16px;
+    min-width: 250px;
+    /* -webkit-box-shadow: 0px 5px 10px 19px rgba(229, 117, 29, 0.2) inset;
+-moz-box-shadow: 0px 5px 10px 19px rgba(229, 117, 29, 0.2) inset;
+box-shadow: 0px 5px 10px 19px rgba(229, 117, 29, 0.2) inset; */
+/* box-shadow: inset 7px -7px 18px #e0e0d8,
+inset -7px -7px 18px #b8b7ae; */
+background-color: #ab98f1;
+background-image: var(--allBackGround);
+/* background-attachment: fixed; */
+background-size: cover;
+}
+
+.myModal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myModalContent:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 1px dashed salmon;
+    border-radius: 5px;
+    }

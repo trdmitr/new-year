@@ -1,0 +1,119 @@
+.content {
+  padding: 1px;
+  width: 32rem;
+  height: 61rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: #7caaee;
+  background-image: var(--allBackGround);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.content::-webkit-scrollbar {
+  width: 1px;
+}
+
+.content h1 {
+  margin-left: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .content {
+    height: 48rem;
+    width: 32rem
+  }
+}
+
+.front_header {
+  width: 277px;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1em 1.5em;
+  color: rgb(24, 21, 21);
+  /* background-color: #5e4cc9; */
+  background-image: var(--allBackGround);
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  /* border-radius: 0.5em; */
+  /* margin-bottom: 1.5em; */
+  /* height: 3em; */
+  /* box-shadow: inset 19px -19px 38px #3917f7, inset -19px 19px 38px #c8dee2; */
+}
+
+.front_header img {
+  padding: 0.5rem;
+  opacity: 50%;
+}
+.front_header p {
+  font-size: 2em !important;
+
+  /* background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #b3b2ec 1em, #3917f7 50%), repeating-linear-gradient(45deg, #3917f7, #3917f7 1em, #FFF 1em, rgb(140, 205, 242) 50%); */
+}
+
+.front_media {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  padding: 0.5em;
+  /* background-color: #eee; */
+  border-radius: 0.5em;
+  object-fit: cover;
+  vertical-align: middle;
+  
+}
+
+.front_media img {
+  max-width: none;
+  min-width: auto;
+  min-height: auto;
+  padding: 1.5em;
+  height: 107%;
+  width: auto;
+  padding: 0em;
+  /* opacity: 75%; */
+  /* transform: translate(10px, 10px); */
+}
+
+.front_body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front_body,.front_header p {
+  font-family: 'Rubik Gemstones', cursive;
+  font-weight: normal;
+  padding: 0.5em;
+  /* color: var(--colorText); */
+  color:rgb(22, 20, 173);
+  /* background-color: #f72417; */
+  background-image: var(--allBackGround);
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  font-size: 3.9em;
+  text-align: center;
+  border-radius: 1em;
+  box-shadow: inset 19px -19px 38px #3917f7, inset -19px 19px 38px #c8dee2;
+  margin-top:  0.5em;
+  /* mix-blend-mode: screen; */
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #b3b2ec 1em, #3917f7 50%), repeating-linear-gradient(45deg, #3917f7, #3917f7 1em, #FFF 1em, rgb(140, 205, 242) 50%);
+    background-size: 3em 3em, 2em 2em;
+    animation-name: ani;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  /* text-shadow: var(--textShadow); */
+  /* box-shadow: var(--boxShadow); */
+}
+@keyframes ani {
+  from {
+      background-position: 0 0;
+  }
+  to {
+      background-position: 100% 0;
+  }
+}

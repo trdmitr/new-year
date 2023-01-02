@@ -1,0 +1,165 @@
+.mediaHidden {
+  display: none;
+}
+
+.mediaSong {
+  font-family: "Cassandra";
+  font-size: 1rem;
+  font-weight: normal;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  padding: 0.5rem;
+   /* background-color: #efebf5; */
+  background-image: var(--allBackGround);
+  /* background-attachment: fixed; */
+  /* background-size: cover; */
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  /* box-shadow: inset 19px -19px 38px #3917f7, inset -19px 19px 38px #c8dee2; */
+  /* box-shadow: inset 19px -19px 38px #b93d3d, inset -19px 19px 38px #e2c8c8; */
+  object-fit: cover;
+  vertical-align: middle;
+  flex-direction: column;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.mediaSong::-webkit-scrollbar {
+  width: 0.1px;
+}
+
+.mediaImage {
+  max-width: none;
+  min-width: auto;
+  min-height: auto;
+  padding: 1.5rem;
+  height: 60%;
+  width: auto;
+}
+
+.mediaImage>img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.headerSong {
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 0.2rem 1.3rem;
+  color: var(--titleSongColor);
+  background-color: var(--colorBackgroundAll);
+  border-radius: 0.5rem;
+  /* border: 2px solid var(--titleSongColor); */
+  border-bottom: 3px solid #e6d8d8;
+  text-shadow: -1px -1.6px 0px #f72417;
+  box-shadow: var(--boxShadow);
+  cursor: pointer;
+}
+.headerSong h2 {
+  /* font-family: 'Rubik Gemstones', cursive; */
+  
+  text-shadow: var(--textShadow);
+  margin: 0%;
+}
+
+.linkTo {
+  position: absolute;
+  top: 96%;
+  left: 31%;
+  background-color: var(--colorText);
+  border: none;
+  color: white;
+  padding: 2px 6px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: .5em;
+  z-index: 7;
+}
+
+
+.audioBlock {
+  display: block;
+
+}
+
+.audioBlock>p {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--colorText);
+  background-color: var(--tributeAfterBefore);
+  border-radius: 0.5em;
+  text-shadow: var(--textShadow);
+  box-shadow: var(--boxShadow);
+}
+
+.videoBlock>p {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--colorText);
+  background-color: var(--tributeAfterBefore);
+  border-radius: 0.5em;
+  text-shadow: var(--textShadow);
+  box-shadow: var(--boxShadow);
+}
+
+.videoBlock {
+  position: relative;
+
+  width: 100%;
+  height: 255px;
+
+}
+
+.videoEdge {
+  position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videoEdge iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 255px;
+}
+
+#videoFrame {
+  position: relative;
+  padding-bottom: 1em;
+  width: 100% !important;
+  height: 22vh !important;
+  border-width: 0;
+  outline-width: 0;
+}
+
+audio::-webkit-media-controls-enclosure {
+
+  background-color: var(--titleSongColor);
+  text-shadow: -1px -1.6px 0px #9440f3;
+  box-shadow: var(--boxShadow);
+
+}
+
+.tziTata {
+  /* position:sticky; */
+  
+  padding-bottom: 20px; /* по размеру инпута */
+  /* height: 76rem; */
+}
+
+.tziImage {
+  
+  margin-top: 2rem;
+  height: auto;
+  width: 100%;
+  
+}
