@@ -29,7 +29,9 @@ const Player = () => {
 
     }
 
-    const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
+    const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost);
+
+    // const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
     if (status === 'loading')
         return <>loading...</>;
 
