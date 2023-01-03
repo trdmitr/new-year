@@ -1,44 +1,51 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from "react";
 import classes from './PlayList.module.css'
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import AxiosService from '../API/AxiosService'
 // import axios from 'axios'
-import { useQuery } from '@tanstack/react-query'
+// import { useQuery } from '@tanstack/react-query'
+import { useFetching } from '../Hooks/useFetchig';
 // import Loader from '../UI/Loader/Loader';
-// const queryClient = new QueryClient();
-const Player = () => {
-    // const [data, setData] = useState({});
-    const [trackIndex, setTrackIndex] = useState(0);
-    const fetchPost = () => {
 
-        const url = `https://api.jsonbin.io/v3/b/63b4506e15ab31599e2b594b`;
-        const config = {
-            headers: {
-                'X-Access-Key': '$2b$10$uNKdqlNveTZfgBvIJNkSsedScM0e6eJ8wDkF8HSnAQOVtOZFHdDz.'
-            }
-        }
-        return fetch(url, config).then((res) => {
-            const result = res.json();
-            // console.log({ result });
-            return result;
-        });
+const Player = () => {
+    const [sings, setSongs] = useState({});
+    const [trackIndex, setTrackIndex] = useState(0);
+    const [fetchSongs, isSongsLoading, songError] = useFetching(async () => {
+        const response = await AxiosService.getPlayers();
+        // console.log(response)
+        setSongs(response.record)
+      });
+    
+      useEffect(() => {
+        fetchSongs()
+      }, [])
+    // const fetchPost = () => {
+
+    //     const url = `https://api.jsonbin.io/v3/b/63b4506e15ab31599e2b594b`;
+    //     const config = {
+    //         headers: {
+    //             'X-Access-Key': '$2b$10$uNKdqlNveTZfgBvIJNkSsedScM0e6eJ8wDkF8HSnAQOVtOZFHdDz.'
+    //         }
+    //     }
+    //     return fetch(url, config).then((res) => {
+    //         const result = res.json();
+    //         console.log({ result });
+    //         return result;
+    //     });
 
         // setData(response.data.record.cavers)
         // return response.data.record;
 
-    }
+    
 
-    const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost);
+    // const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost);
 
     // const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
-    if (status === 'loading')
-        return <>loading...</>;
+    
 
-    if (status === 'error')
-        return <h1 style={{ backgroundColor: "black" }}>Ошибка загрузки {error.message}</h1>;
-
-    const audioList = query.record;
+    // const audioList = query.record;
     // const songs = audioList
     // console.log('audioList ', audioList);
     // console.log("query.data", query)
@@ -111,15 +118,20 @@ const Player = () => {
     // const aud6 = mapSongsFields(["name", "audio3"]);
     //  const musicTracks2 = [...aud4, ...aud5, ...aud6].filter(e => e.audio1 !== "" && e.audio2 !== '' && e.audio3 !== '' );
     //   console.log ("musicTracks2" , musicTracks2)
+    if (isSongsLoading)
+        return <>loading...</>
+
+    if (songError)
+        return <h1 style={{ backgroundColor: "black" }}>Ошибка загрузки!{songError}</h1>
 
     const handleClickPrevious = () => {
         setTrackIndex((currentTrack) =>
-            currentTrack === 0 ? audioList.length - 1 : currentTrack - 1
+            currentTrack === 0 ? sings.length - 1 : currentTrack - 1
         );
     };
     const handleClickNext = () => {
         setTrackIndex((currentTrack) =>
-            currentTrack < audioList.length - 1 ? currentTrack + 1 : 0
+            currentTrack < sings.length - 1 ? currentTrack + 1 : 0
         );
     };
     return (
@@ -131,12 +143,12 @@ const Player = () => {
                 style={{ borderRadius: "1rem", fontSize: "2em" }}
                 // autoPlay
                 // layout="horizontal"
-                src={audioList[trackIndex].src}
+                src={sings[trackIndex].src}
                 // onPlay={(e) => console.log("onPlay")}
                 showSkipControls={true}
                 showJumpControls={false}
-                header={`Сейчас играет: ${audioList[trackIndex].name}`}
-                footer={`${audioList[trackIndex].aud_name}`}
+                header={`Сейчас играет: ${sings[trackIndex].name}`}
+                footer={`${sings[trackIndex].aud_name}`}
                 onClickPrevious={handleClickPrevious}
                 onClickNext={handleClickNext}
                 onEnded={handleClickNext}

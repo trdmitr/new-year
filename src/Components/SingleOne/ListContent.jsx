@@ -1,10 +1,10 @@
 import React from 'react'
 import { useParams } from "react-router";
 import classes from './SingleOne.module.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import RoundLoader from '../UI/Loader/RoundLoader';
-import Img from '../Img';
+// import Img from '../Img';
 const fetchPost = () => {
 
     const url = `https://api.jsonbin.io/v3/b/63b4278c15ab31599e2b3846`;
@@ -22,7 +22,7 @@ const fetchPost = () => {
 const ListContent = () => {
     // const navigate = useNavigate();
     const params = useParams();
-    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost);
+    // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost);
     if (status === 'loading') {
         return <RoundLoader />
     }
