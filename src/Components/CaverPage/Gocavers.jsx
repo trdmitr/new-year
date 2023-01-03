@@ -5,18 +5,18 @@ import {useQuery}  from '@tanstack/react-query'
 import Img from '../Img';
 import Loader from '../UI/Loader/Loader';
 import Papa from "papaparse";
-const fetchSheets = () => {
-    Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZt6Aq4b7BblAMH0dd0conRzDqtNsEeG0-cEVq1cYfrq6v-AdjeqEeWB-C6pcLVt8PEwQtzaEYJ4D2/pub?output=csv",
-    {
-     download: true,
-     header: true,
-     complete: (results) => {
-        console.log(results.data)
-       return results.data
+// const fetchSheets = () => {
+//     Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vRZt6Aq4b7BblAMH0dd0conRzDqtNsEeG0-cEVq1cYfrq6v-AdjeqEeWB-C6pcLVt8PEwQtzaEYJ4D2/pub?output=csv",
+//     {
+//      download: true,
+//      header: true,
+//      complete: (results) => {
+//         console.log(results.data)
+//        return results.data
        
-     }
-   })
- }
+//      }
+//    })
+//  }
    
 const fetchPost =   () => {
     
@@ -34,7 +34,7 @@ const fetchPost =   () => {
 }
 
 export default function Gocavers () {
-    fetchSheets()
+    
     const navigate = useNavigate();
     const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, {staleTime: 60000}, {cacheTime: 1000 * 60 * 60}, {refetchOnWindowFocus: false}, {enabled: false}, {retry: false});
     // console.log("query", results.data)
