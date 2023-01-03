@@ -2,7 +2,7 @@
   "name": "newyear",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://trdmitr.github.io/new-year",
+  "homepage": "https://trdmitr.github.io/new-year/ ",
   "dependencies": {
     "@tanstack/react-query": "^4.20.4",
     "@tanstack/react-query-devtools": "^4.20.4",

@@ -32,7 +32,7 @@ const CaverPage = () => {
                     } */}
                     {/* {singContent} */}
                     <Gocavers/>
-                    {/* <a className={classes.linkTo} href="https://trdmitr.github.io/alltributes/#/" target="_blank" rel="noopener noreferrer"> Все трибьюты </a> */}
+                    {/* <a c lassName={classes.linkTo} href="https://trdmitr.github.io/alltributes/#/" target="_blank" rel="noopener noreferrer"> Все трибьюты </a> */}
                 </div><Player/>
             </div>
         </div>

@@ -10,12 +10,12 @@
     box-sizing: inherit;
     
   }
-  @media (max-width: 575.98px) { 
+  /* @media (max-width: 575.98px) { 
     .content {  
     height: 48rem;
     width: 32rem
-  } 
-}
+  }  */
+
   .tribute_app:before {
     content: '';
     display: block;
