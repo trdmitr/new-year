@@ -12,7 +12,7 @@ const Player = () => {
     const [trackIndex, setTrackIndex] = useState(0);
     const fetchPost = () => {
 
-        const url = `https://api.jsonbin.io/v3/b/63a3fbd5dfc68e59d56e6428`;
+        const url = `https://api.jsonbin.io/v3/b/63b4506e15ab31599e2b594b`;
         const config = {
             headers: {
                 'X-Access-Key': '$2b$10$uNKdqlNveTZfgBvIJNkSsedScM0e6eJ8wDkF8HSnAQOVtOZFHdDz.'
@@ -29,7 +29,7 @@ const Player = () => {
 
     }
 
-    const { status, data: query, isFetching, error } = useQuery(['Kinchev_mp3'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
+    const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
     if (status === 'loading')
         return <>loading...</>;
 
@@ -37,6 +37,7 @@ const Player = () => {
         return <h1 style={{ backgroundColor: "black" }}>Ошибка загрузки {error.message}</h1>;
 
     const audioList = query.record;
+    // const songs = audioList
     // console.log('audioList ', audioList);
     // console.log("query.data", query)
     // const audiosongs1 = songs.map((song) => {
@@ -65,7 +66,7 @@ const Player = () => {
     // )
     // const audioList2 = [...audiosongs1, ...audiosongs2, ...audiosongs3]
     //     .filter(e => e.src !== '');
-    // console.log('audioList ', audioList);
+    // console.log('audioList ', audioList2);
 
     // const [loaded, setLoaded] = useState(false)
 

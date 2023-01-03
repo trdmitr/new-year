@@ -96,6 +96,7 @@
   border-radius: 0.5em;
   text-shadow: var(--textShadow);
   box-shadow: var(--boxShadow);
+  /* padding: 14px; */
 }
 
 .videoBlock>p {
@@ -107,6 +108,7 @@
   border-radius: 0.5em;
   text-shadow: var(--textShadow);
   box-shadow: var(--boxShadow);
+  /* padding: 14px; */
 }
 
 .videoBlock {
