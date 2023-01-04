@@ -29,13 +29,13 @@ const SingleOne = ({songs}) => {
         }>
           <p>{currSing.audio_name1}</p>
           <audio controls className={currSing.audio1.trim() ? null : classes.mediaHidden}
-            source src={currSing.audio1} type="audio/mpeg" />
+          src={currSing.audio1} type="audio/mpeg" />
           <p>{currSing.audio_name2}</p>
           <audio controls className={currSing.audio2.trim() ? null : classes.mediaHidden}
-            source src={currSing.audio2} type="audio/mpeg" />
+          src={currSing.audio2} type="audio/mpeg" />
           <p>{currSing.audio_name3}</p>
           <audio controls className={currSing.audio3.trim() ? null : classes.mediaHidden}
-            source src={currSing.audio3} type="audio/mpeg" />
+          src={currSing.audio3} type="audio/mpeg" />
         </div>
         <div className={[classes.tziTata, currSing.picture_tzitata.trim() ? null : classes.mediaHidden].join(' ') }>
           <img className={classes.tziImage} src={currSing.picture_tzitata} width={80} alt="Цитаты" />
