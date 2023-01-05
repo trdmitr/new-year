@@ -19,14 +19,14 @@ function App() {
   const [songs, setSongs] = useState([]);
   // const [data, setData] = useState({});
   // const [songErrors, setSongError] = useState('');
-  // const queryClient = new QueryClient({
+  const queryClient = new QueryClient({
     // defaultOptions: {
     //     queries: {
     //         staleTime: 60 * 60 * 1000, // 60 минут
     //         cacheTime: 1000 * 60 * 60 * 24 // 24 часа
     //     },
     // },
-// })
+})
 
   const [fetchSongs, isSongsLoading, songError] = useFetching(async () => {
     const response = await AxiosService.getCavers();
