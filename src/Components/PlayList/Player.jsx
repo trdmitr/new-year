@@ -42,8 +42,14 @@ const Player = () => {
 
     // const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost);
 
+<<<<<<< HEAD
     // const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: 3 });
     
+=======
+    const { status, data: query, isFetching, error } = useQuery(['new_year2'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: false });
+    if (status === 'loading')
+        return <>loading...</>;
+>>>>>>> 57011d6b2c593d3a20ce3306d67cae113b53e5c2
 
     // const audioList = query.record;
     // const songs = audioList

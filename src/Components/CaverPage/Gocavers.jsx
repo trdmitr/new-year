@@ -36,9 +36,13 @@ import Loader from '../UI/Loader/Loader';
 export default function Gocavers ({ songs, songError, isSongsLoading }) {
     
     const navigate = useNavigate();
+<<<<<<< HEAD
     // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost);
+=======
+    // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost );
+>>>>>>> 57011d6b2c593d3a20ce3306d67cae113b53e5c2
 
-    // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, {staleTime: 60000}, {cacheTime: 1000 * 60 * 60}, {refetchOnWindowFocus: false}, {enabled: false}, {retry: 2});
+    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, {staleTime: 60000}, {cacheTime: 1000 * 60 * 60}, {refetchOnWindowFocus: false}, {enabled: false}, {retry: false});
     // console.log("query", results.data)
     // const songs = results.data;
     if (isSongsLoading) {
