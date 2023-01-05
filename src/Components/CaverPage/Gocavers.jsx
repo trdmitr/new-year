@@ -36,9 +36,9 @@ const fetchPost =   () => {
 export default function Gocavers () {
     
     const navigate = useNavigate();
-    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost);
+    // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost );
 
-    // const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, {staleTime: 60000}, {cacheTime: 1000 * 60 * 60}, {refetchOnWindowFocus: false}, {enabled: false}, {retry: 2});
+    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, {staleTime: 60000}, {cacheTime: 1000 * 60 * 60}, {refetchOnWindowFocus: false}, {enabled: false}, {retry: false});
     // console.log("query", results.data)
     // const songs = results.data;
     if (status === 'loading') {
