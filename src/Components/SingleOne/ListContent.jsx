@@ -22,7 +22,7 @@ const fetchPost = () => {
 const ListContent = () => {
     // const navigate = useNavigate();
     const params = useParams();
-    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost);
+    const { status, data: songs, isFetching, error } = useQuery(['new_year'], fetchPost, { staleTime: 60000 }, { cacheTime: 1000 * 60 * 60 }, { refetchOnWindowFocus: false }, { enabled: false }, { retry: false });
     if (status === 'loading') {
         return <RoundLoader />
     }
